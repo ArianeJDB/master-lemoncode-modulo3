@@ -7,8 +7,11 @@ const basePath = __dirname;
 
 module.exports = {
     context: path.join(basePath, "src"),
+    resolve: {
+        extensions: [".js",".ts"]
+    },
     entry: {
-        app: './main.js',
+        app: './main.ts',
         appStyles: [
         './styles.scss',
         ],
@@ -21,7 +24,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.ts$/,
                 exclude: /node_modules/,
                 loader: "babel-loader",
             },
